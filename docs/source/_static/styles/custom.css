@@ -1,0 +1,57 @@
+:root {
+    --pst-font-family-base: Helvetica, Arial, var(--pst-font-family-base-system);
+    --pst-font-family-heading: Helvetica, Arial, var(--pst-font-family-base-system);
+    --pst-font-family-monospace: SFMono-Regular, Menlo, Source Code Pro, var(--pst-font-family-monospace-system);
+    --pst-color-primary: 0, 0, 0;
+    --pst-color-active-navigation: 0, 112, 186;
+    --pst-color-link: 0, 112, 186;
+    --pst-color-link-hover: 0, 112, 186;
+    --pst-color-headerlink: 0, 112, 186;
+}
+
+pre {
+    border: 1px solid #e6e6e6 !important;
+    box-shadow: none !important;
+}
+
+code {
+    padding: 2px 4px;
+    background-color: #fff3f8;
+    border-radius: 2px;
+}
+
+div.deprecated {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 0.6rem 0.8rem 0.6rem !important;
+    overflow: hidden !important;
+    page-break-inside: avoid !important;
+    border-left: 0.2rem solid !important;
+    border-color: rgba(var(--pst-color-admonition-danger), 1) !important;
+    border-radius: 0.1rem !important;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05),
+        0 0 0.05rem rgba(0, 0, 0, 0.1) !important;
+    transition: color 250ms, background-color 250ms, border-color 250ms !important;
+}
+
+div.deprecated p {
+    margin: 0 !important;
+    padding: 0 1.4rem !important;
+    margin-top: .4em !important;
+    color: rgba(var(--pst-color-paragraph), 1) !important;
+    display: block !important;
+}
+
+.versionmodified {
+    font-weight: bold;
+}
+
+.navbar-toggler {
+    margin: .5rem !important;
+}
+
+@media screen and (min-width: 960px), screen and (max-width: 530px) {
+    .version-width {
+        max-width: 100px;
+    }
+}
