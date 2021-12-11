@@ -1,8 +1,6 @@
 # API Reference
 
 ```{toctree}
-:maxdepth 2
-:caption Modules:
-
-*
+:maxdepth: 2
+:caption: Modules
 ```

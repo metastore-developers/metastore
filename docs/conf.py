@@ -2,16 +2,20 @@ import metastore
 
 
 project = metastore.__title__
-release = metastore.__version__
+version = metastore.__version__
 author = metastore.__author__
 copyright = metastore.__copyright__
 
 extensions = [
+    'sphinx.ext.autodoc',
     'myst_parser'
 ]
 source_suffix = {
     '.md': 'markdown'
 }
+exclude_patterns = [
+    'build'
+]
 
 html_theme = 'pydata_sphinx_theme'
 
@@ -38,7 +42,7 @@ html_theme_options = {
         {
             'name': 'PyPI',
             'url': 'https://pypi.org/project/metastore',
-            'icon': 'fas fa-python'
+            'icon': 'fab fa-python'
         }
     ]
 }

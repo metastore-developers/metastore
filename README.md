@@ -1,6 +1,20 @@
+<p align="left">
+    <a href="https://github.com/metastore-developers/metastore" title="Metastore">
+        <img src="docs/_static/images/logo.svg" width="128px"/>
+    </a>
+</p>
+
+[![Releases](https://img.shields.io/github/v/release/metastore-developers/metastore?color=blue)](https://github.com/metastore-developers/metastore/releases)
+[![Issues](https://img.shields.io/github/issues/metastore-developers/metastore?color=blue)](https://github.com/metastore-developers/metastore/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/metastore-developers/metastore?color=blue)](https://github.com/metastore-developers/metastore/pulls)
+[![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://metastore.readthedocs.io)
+[![License](https://img.shields.io/pypi/l/metastore?color=blue)](LICENSE.md)
+
 # Metastore
 
 Metastore Python SDK.
+
+Feature store and data catalog for machine learning.
 
 ## Prerequisites
 
@@ -66,7 +80,7 @@ Build documentation:
 
 ```
 cd docs/
-sphinx-build -b html source/ build/
+sphinx-build -b html . build/
 ```
 
 ## Changelog

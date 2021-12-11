@@ -37,7 +37,7 @@ div.deprecated {
 div.deprecated p {
     margin: 0 !important;
     padding: 0 1.4rem !important;
-    margin-top: .4em !important;
+    margin-top: 0.4em !important;
     color: rgba(var(--pst-color-paragraph), 1) !important;
     display: block !important;
 }
@@ -46,8 +46,12 @@ div.deprecated p {
     font-weight: bold;
 }
 
+.navbar-brand {
+    padding: 0.6rem 0 !important;
+}
+
 .navbar-toggler {
-    margin: .5rem !important;
+    margin: 0.5rem !important;
 }
 
 @media screen and (min-width: 960px), screen and (max-width: 530px) {

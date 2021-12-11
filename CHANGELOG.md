@@ -2,7 +2,7 @@
 
 ## [v1.0.0](https://github.com/metastore-developers/metastore/releases/tag/v1.0.0) (2022-04-01)
 
-### **New features**
+### New features
 
 - Distributed processing
 - Data lineage
