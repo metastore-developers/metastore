@@ -12,7 +12,9 @@ Install package:
 pip install -e .[development]
 ```
 
-> **Note** Use the `-e, --editable` flag to install the package in development mode.
+```{note}
+Use the `-e, --editable` flag to install the package in development mode.
+```
 
 Format source code:
 

@@ -4,7 +4,7 @@ import metastore
 project = metastore.__title__
 version = metastore.__version__
 author = metastore.__author__
-copyright = metastore.__copyright__
+copyright = metastore.__copyright__[:-1]
 
 extensions = [
     'sphinx.ext.autodoc',
