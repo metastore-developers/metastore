@@ -76,6 +76,7 @@ setup(
             'pylint>=2.12.0',
             'pytest>=6.2.0',
             'pytest-cov>=3.0.0',
+            'pytest-custom-exit-code>=0.3.0',
             'sphinx>=4.3.0',
             'myst-parser>=0.15.0',
             'pydata-sphinx-theme>=0.7.0',

@@ -37,9 +37,9 @@ jobs:
             - name: install-package
               run: pip install -e .[development]
             - name: test-package
-              run: pytest
+              run: pytest --suppress-no-test-exit-code
             - name: check-coverage
-              run: pytest --cov --cov-fail-under 80
+              run: pytest --suppress-no-test-exit-code --cov --cov-fail-under 80
     build-publish:
         runs-on: ubuntu-latest
         environment: production
