@@ -29,6 +29,7 @@ templates_path = [
     '_templates'
 ]
 
+html_title = f'{project} Documentation'
 html_favicon = '_static/images/favicon.ico'
 html_logo = '_static/images/logo.svg'
 

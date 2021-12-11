@@ -3,7 +3,7 @@ Package description information.
 '''
 
 __title__ = 'Metastore'
-__version__ = '1.0.0-dev2'
+__version__ = '1.0.0-dev3'
 __description__ = 'Metastore Python SDK.'
 __author__ = 'Metastore Developers'
 __email__ = 'metastoredevelopers@gmail.com'

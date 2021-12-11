@@ -1,6 +1,6 @@
 <p align="left">
     <a href="https://github.com/metastore-developers/metastore" title="Metastore">
-        <img src="docs/_static/images/logo.svg" width="128px"/>
+        <img src="https://metastore.readthedocs.io/en/latest/_static/logo.svg" width="128px"/>
     </a>
 </p>
 
@@ -8,7 +8,7 @@
 [![Issues](https://img.shields.io/github/issues/metastore-developers/metastore?color=blue)](https://github.com/metastore-developers/metastore/issues)
 [![Pull requests](https://img.shields.io/github/issues-pr/metastore-developers/metastore?color=blue)](https://github.com/metastore-developers/metastore/pulls)
 [![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://metastore.readthedocs.io)
-[![License](https://img.shields.io/pypi/l/metastore?color=blue)](LICENSE.md)
+[![License](https://img.shields.io/pypi/l/metastore?color=blue)](https://metastore.readthedocs.io/en/latest/license.html)
 
 # Metastore
 
@@ -83,12 +83,16 @@ cd docs/
 sphinx-build -b html . build/
 ```
 
+## Documentation
+
+Please refer to the official [Metastore Documentation](https://metastore.readthedocs.io) for more information.
+
 ## Changelog
 
-[Changelog](CHANGELOG.md) contains information about new features, improvements, known issues, and bug fixes in each release.
+[Changelog](https://metastore.readthedocs.io/en/latest/changelog.html) contains information about new features, improvements, known issues, and bug fixes in each release.
 
 ## Copyright and license
 
 Copyright (c) 2022, Metastore Developers. All rights reserved.
 
-Project developed under a [BSD-3-Clause License](LICENSE.md).
+Project developed under a [BSD-3-Clause License](https://metastore.readthedocs.io/en/latest/license.html).
