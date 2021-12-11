@@ -1,4 +1,4 @@
-name: ci
+name: production
 on:
     push:
         branches:
@@ -10,6 +10,7 @@ on:
 jobs:
     lint:
         runs-on: ubuntu-latest
+        environment: production
         steps:
             - name: setup-python
               uses: actions/setup-python@v2
@@ -25,6 +26,7 @@ jobs:
               run: pylint setup.py metastore/
     test:
         runs-on: ubuntu-latest
+        environment: production
         steps:
             - name: setup-python
               uses: actions/setup-python@v2
@@ -37,9 +39,10 @@ jobs:
             - name: test-package
               run: pytest
             - name: check-coverage
-              run: pytest --cov --cov-fail-under
+              run: pytest --cov --cov-fail-under 80
     build-publish:
         runs-on: ubuntu-latest
+        environment: production
         steps:
             - name: setup-python
               uses: actions/setup-python@v2
@@ -52,4 +55,7 @@ jobs:
             - name: build-package
               run: python setup.py bdist_wheel
             - name: publish-package
+              env:
+                TWINE_USERNAME: ${{ secrets.REPOSITORY_USERNAME }}
+                TWINE_PASSWORD: ${{ secrets.REPOSITORY_PASSWORD }}
               run: twine upload dist/*
