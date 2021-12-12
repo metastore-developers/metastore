@@ -15,7 +15,7 @@ def get_package_info(path: str) -> Dict[str, str]:
     Arguments:
         path (str): Path to directory defining package main module.
     Returns:
-        (Dict[str, str]) A dictionary containing package information.
+        Dict[str, str]: A dictionary containing package information.
     '''
 
     with open(
@@ -33,7 +33,7 @@ def parse_long_description() -> str:
     Get package long description.
 
     Returns:
-        (str) A string representing package long description.
+        str: A string representing package long description.
     '''
 
     with open(convert_path('README.md'), encoding='utf-8') as file:
@@ -76,11 +76,10 @@ setup(
             'pylint>=2.12.0',
             'pytest>=6.2.0',
             'pytest-cov>=3.0.0',
-            'pytest-custom-exit-code>=0.3.0',
             'sphinx>=4.3.0',
             'myst-parser>=0.15.0',
             'pydata-sphinx-theme>=0.7.0',
-            'twine >= 3.7.0'
+            'twine>=3.7.0'
         ]
     },
     packages=find_packages(),

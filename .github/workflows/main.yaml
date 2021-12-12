@@ -21,9 +21,9 @@ jobs:
             - name: install-package
               run: pip install -e .[development]
             - name: check-format
-              run: autopep8 --recursive --exit-code --diff setup.py metastore/
+              run: autopep8 --recursive --exit-code --diff setup.py metastore/ tests/
             - name: check-lint
-              run: pylint setup.py metastore/
+              run: pylint setup.py metastore/ tests/
     test:
         runs-on: ubuntu-latest
         environment: production
@@ -37,9 +37,9 @@ jobs:
             - name: install-package
               run: pip install -e .[development]
             - name: test-package
-              run: pytest --suppress-no-test-exit-code
+              run: pytest
             - name: check-coverage
-              run: pytest --suppress-no-test-exit-code --cov --cov-fail-under 80
+              run: pytest --cov --cov-fail-under 80
     build-publish:
         runs-on: ubuntu-latest
         environment: production

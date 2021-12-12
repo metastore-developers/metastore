@@ -19,13 +19,13 @@ Use the `-e, --editable` flag to install the package in development mode.
 Format source code:
 
 ```
-autopep8 --recursive --in-place setup.py metastore/
+autopep8 --recursive --in-place setup.py metastore/ tests/
 ```
 
 Lint source code:
 
 ```
-pylint setup.py metastore/
+pylint setup.py metastore/ tests/
 ```
 
 Test package:
@@ -37,7 +37,11 @@ pytest
 Report test coverage:
 
 ```
-pytest --cov
+pytest --cov --cov-fail-under 80
+```
+
+```{note}
+Set the `--cov-fail-under` flag to 80% to validate the code coverage metric.
 ```
 
 Build package:
