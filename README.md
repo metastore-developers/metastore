@@ -1,6 +1,6 @@
 <p align="left">
     <a href="https://github.com/metastore-developers/metastore" title="Metastore">
-        <img src="https://metastore.readthedocs.io/en/latest/_static/logo.svg" width="128px"/>
+        <img src="https://metastore.readthedocs.io/en/latest/_static/logo.svg?" width="128px"/>
     </a>
 </p>
 
