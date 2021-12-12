@@ -12,7 +12,7 @@ def get_package_info(path: str) -> Dict[str, str]:
     '''
     Get package description information.
 
-    Arguments:
+    Parameters:
         path (str): Path to directory defining package main module.
     Returns:
         Dict[str, str]: A dictionary containing package information.

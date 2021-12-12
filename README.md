@@ -66,23 +66,17 @@ pytest --cov --cov-fail-under 80
 
 > **Note** Set the `--cov-fail-under` flag to 80% to validate the code coverage metric.
 
-Build package:
+Generate documentation:
 
 ```
-python setup.py bdist_wheel
+sphinx-apidoc -f -e -T -d 2 -o docs/metastore/api-reference/ metastore/
 ```
 
-Publish package:
-
-```
-twine upload dist/*
-```
-
-Build documentation:
+Build documentation (optional):
 
 ```
 cd docs/
-sphinx-build -b html . build/
+sphinx-build -b html metastore/ build/
 ```
 
 ## Documentation

@@ -7,10 +7,10 @@ from datetime import datetime, timezone
 from metastore import utils
 
 
-def test_timezone_aware_should_return_same_timezone_aware_datetime_with_timezone_aware_datetime_argument():  # pylint: disable=C0301
+def test_timezone_aware_should_return_same_timezone_aware_datetime_with_timezone_aware_datetime_parameter():  # pylint: disable=C0301
     '''
     Test converting naive to timezone-aware datetime (UTC timezone)
-    with timezone-aware datetime argument.
+    with timezone-aware datetime parameter.
 
     Raises:
         AssertionError: Expected value does not match the returned value.
@@ -22,10 +22,10 @@ def test_timezone_aware_should_return_same_timezone_aware_datetime_with_timezone
     assert actual_datetime == expected_datetime
 
 
-def test_timezone_aware_should_return_new_timezone_aware_datetime_with_naive_timezone_datetime_argument():  # pylint: disable=C0301
+def test_timezone_aware_should_return_new_timezone_aware_datetime_with_naive_timezone_datetime_parameter():  # pylint: disable=C0301
     '''
     Test converting naive to timezone-aware datetime (UTC timezone)
-    with naive datetime argument.
+    with naive datetime parameter.
 
     Raises:
         AssertionError: Expected value does not match the returned value.

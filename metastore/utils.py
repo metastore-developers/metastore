@@ -9,7 +9,7 @@ def timezone_aware(date: datetime) -> datetime:
     '''
     Convert naive to timezone-aware datetime (UTC timezone).
 
-    Arguments:
+    Parameters:
         date (datetime): Datetime object.
     Returns:
         datetime: A timezone-aware datetime.

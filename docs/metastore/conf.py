@@ -10,7 +10,13 @@ extensions = [
     'sphinx.ext.autodoc',
     'myst_parser'
 ]
+
+autodoc_default_options = {
+    'special-members': True
+}
+
 source_suffix = {
+    '.rst': 'restructuredtext',
     '.md': 'markdown'
 }
 exclude_patterns = [

@@ -2,12 +2,25 @@
 Package description information.
 '''
 
+#: Package display name.
 __title__ = 'Metastore'
-__version__ = '1.0.0.dev4'
+
+#: Package version.
+__version__ = '1.0.0.dev5'
+
+#: Package description.
 __description__ = 'Metastore Python SDK.'
+
+#: Package author name.
 __author__ = 'Metastore Developers'
+
+#: Package author email.
 __email__ = 'metastoredevelopers@gmail.com'
+
+#: Package license name.
 __license__ = 'BSD-3-Clause'
+
+#: Package copyright.
 __copyright__ = 'Copyright (c) 2022, Metastore Developers. All rights reserved.'
 
 
