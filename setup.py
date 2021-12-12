@@ -72,6 +72,7 @@ setup(
     extras_require={
         'development': [
             'setuptools>=58.2.0',
+            'wheel>=0.37.0',
             'autopep8>=1.6.0',
             'pylint>=2.12.0',
             'pytest>=6.2.0',
