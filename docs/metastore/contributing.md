@@ -16,6 +16,10 @@ pip install -e .[development]
 Use the `-e, --editable` flag to install the package in development mode.
 ```
 
+```{note}
+Set up a virtual environment for development.
+```
+
 Format source code:
 
 ```

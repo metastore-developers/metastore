@@ -50,8 +50,18 @@ div.deprecated p {
     padding: 0.6rem 0 !important;
 }
 
+.navbar-light .navbar-nav li a.nav-link {
+    padding: .2rem .5rem !important;
+}
+
 .navbar-toggler {
     margin: 0.5rem !important;
+}
+
+@media not (min-width:960px) {
+    #navbar-collapsible {
+        padding: 0px 15px 15px !important;
+    }
 }
 
 @media screen and (min-width: 960px), screen and (max-width: 530px) {

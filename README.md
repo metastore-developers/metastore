@@ -40,6 +40,8 @@ pip install -e .[development]
 
 > **Note** Use the `-e, --editable` flag to install the package in development mode.
 
+> **Note** Set up a virtual environment for development.
+
 Format source code:
 
 ```
@@ -81,7 +83,7 @@ sphinx-build -b html metastore/ build/
 
 ## Documentation
 
-Please refer to the official [Metastore Documentation](https://metastore.readthedocs.io) for more information.
+Please refer to the official [Metastore Documentation](https://metastore.readthedocs.io).
 
 ## Changelog
 

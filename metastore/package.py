@@ -6,7 +6,7 @@ Package description information.
 __title__ = 'Metastore'
 
 #: Package version.
-__version__ = '1.0.0.dev9'
+__version__ = '1.0.0.dev10'
 
 #: Package description.
 __description__ = 'Metastore Python SDK. Feature store and data catalog for machine learning.'
