@@ -8,7 +8,7 @@
 
 Install package:
 
-```
+```console
 pip install -e .[development]
 ```
 
@@ -22,25 +22,25 @@ Set up a virtual environment for development.
 
 Format source code:
 
-```
+```console
 autopep8 --recursive --in-place setup.py metastore/ tests/
 ```
 
 Lint source code:
 
-```
+```console
 pylint setup.py metastore/ tests/
 ```
 
 Test package:
 
-```
+```console
 pytest
 ```
 
 Report test coverage:
 
-```
+```console
 pytest --cov --cov-fail-under 80
 ```
 
@@ -50,13 +50,13 @@ Set the `--cov-fail-under` flag to 80% to validate the code coverage metric.
 
 Generate documentation:
 
-```
+```console
 sphinx-apidoc -f -e -T -d 2 -o docs/metastore/api-reference/ metastore/
 ```
 
 Build documentation (optional):
 
-```
+```console
 cd docs/
 sphinx-build -b html metastore/ build/
 ```

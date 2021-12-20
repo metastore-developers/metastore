@@ -10,14 +10,18 @@
 }
 
 pre {
-    border: 1px solid #e6e6e6 !important;
+    padding: 10px 20px !important;
+    background-color: #f8fafc !important;
+    border: none !important;
     box-shadow: none !important;
+    border-radius: 0.2rem !important;
 }
 
 code {
-    padding: 2px 4px;
-    background-color: #fff3f8;
-    border-radius: 2px;
+    padding: 2px 4px !important;
+    background-color: #f8fafc !important;
+    border: none !important;
+    border-radius: 0.2rem !important;
 }
 
 div.deprecated {
