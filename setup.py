@@ -53,7 +53,7 @@ setup(
     author=package_info['__author__'],
     author_email=package_info['__email__'],
     license=package_info['__license__'],
-    url='https://github.com/metastore-developers/metastore',
+    url='https://metastore.readthedocs.io',
     download_url='https://pypi.org/project/metastore',
     project_urls={
         'Code': 'https://github.com/metastore-developers/metastore',
