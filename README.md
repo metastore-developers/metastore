@@ -140,9 +140,8 @@ feature_store:
             type: 'secret'
             name: 'REDIS_PASSWORD'
 data_sources:
-  - name: 'customer_transactions'
+  - name: 'postgresql_data_source'
     type: 'postgresql'
-    table: 'public.customer_transaction'
     hostname:
         type: 'secret'
         name: 'POSTGRESQL_HOSTNAME'
@@ -177,7 +176,7 @@ from metastore import (
 
 feature_store = FeatureStore(repository='/path/to/repository/')
 
-customer_transactions_feature_group = FeatureGroup(
+feature_group = FeatureGroup(
     name='customer_transactions',
     record_identifiers=['customer_id'],
     event_time_feature='timestamp',
@@ -189,7 +188,7 @@ customer_transactions_feature_group = FeatureGroup(
     ]
 )
 
-feature_store.apply(customer_transactions_feature_group)
+feature_store.apply(feature_group)
 ```
 
 ### Ingest features
@@ -203,9 +202,10 @@ from metastore import FeatureStore
 feature_store = FeatureStore(repository='/path/to/repository/')
 
 dataframe = feature_store.read_dataframe(
-    'customer_transactions',
+    'postgresql_data_source',
+    table='customer_transaction',
     index_column='customer_id',
-    partitions=100
+    partitions=10
 )
 
 feature_store.ingest('customer_transactions', dataframe)
