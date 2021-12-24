@@ -1,3 +1,10 @@
+'''
+Sphinx configuration file.
+'''
+
+import os, sys
+sys.path.append(os.path.abspath('_pygments/'))
+
 import metastore
 
 
@@ -53,3 +60,5 @@ html_theme_options = {
         }
     ]
 }
+
+pygments_style = 'style.MetastoreStyle'

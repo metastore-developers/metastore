@@ -9,19 +9,27 @@
     --pst-color-headerlink: 0, 112, 186;
 }
 
-pre {
-    padding: 10px 20px !important;
-    background-color: #f5f7f9 !important;
-    border: none !important;
-    box-shadow: none !important;
-    border-radius: 0.4rem !important;
-}
-
 code {
     padding: 2px 4px !important;
     background-color: #f5f7f9 !important;
     border: none !important;
-    border-radius: 0.4rem !important;
+    border-radius: 0.2rem !important;
+}
+
+pre, .highlight {
+    padding: 0px !important;
+    background-color: #f5f7f9 !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0.2rem !important;
+}
+
+.highlight {
+    padding: 12px 20px !important;
+}
+
+.highlight .go {
+    font-style: normal !important;
 }
 
 div.deprecated {
@@ -62,11 +70,7 @@ div.deprecated p {
     margin: 0.5rem !important;
 }
 
-.highlight .go {
-    font-style: normal !important;
-}
-
-@media not (min-width:960px) {
+@media not screen and (min-width:960px) {
     #navbar-collapsible {
         padding: 0px 15px 15px !important;
     }

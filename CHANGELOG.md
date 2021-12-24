@@ -10,7 +10,7 @@
 - Local credential store
 - Vault credential store
 - File metadata store (local and S3)
-- Amundsen metadata store
+- OpenMetadata metadata store
 - File data source (local and S3)
 - PostgreSQL data source
 - Teradata data source
