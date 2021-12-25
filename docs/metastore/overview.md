@@ -1,14 +1,12 @@
 # Overview
 
-<p align="left">
-    <a href="https://github.com/metastore-developers/metastore" title="Metastore">
-        <img src="_static/images/logo.svg" width="128px"/>
-    </a>
-</p>
-
 Metastore Python SDK.
 
 Feature store and data catalog for machine learning.
+
+<p align="center">
+    <img src="_static/images/architecture.png" title="Metastore"/>
+</p>
 
 ## Prerequisites
 
@@ -142,7 +140,7 @@ from metastore import FeatureStore
 
 feature_store = FeatureStore(repository='/path/to/repository/')
 
-dataframe = feature_store.read_dataframe(
+dataframe = feature_store.read_from_source(
     'postgresql_data_source',
     table='customer_transaction',
     index_column='customer_id',
@@ -195,7 +193,7 @@ dataframe = feature_store.get_historical_features(
         'customer_transactions:daily_transactions',
         'customer_transactions:total_transactions'
     ]
-).compute()
+)
 
 metadata = dataframe.attrs['metastore']
 print(metadata)
@@ -222,7 +220,7 @@ dataframe = feature_store.get_online_features(
         'customer_transactions:daily_transactions',
         'customer_transactions:total_transactions'
     ]
-).compute()
+)
 
 metadata = dataframe.attrs['metastore']
 print(metadata)

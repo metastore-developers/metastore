@@ -1,9 +1,3 @@
-<p align="left">
-    <a href="https://github.com/metastore-developers/metastore" title="Metastore">
-        <img src="https://metastore.readthedocs.io/en/latest/_static/logo.svg" width="128px"/>
-    </a>
-</p>
-
 [![Releases](https://img.shields.io/github/v/release/metastore-developers/metastore?color=blue)](https://github.com/metastore-developers/metastore/releases)
 [![Issues](https://img.shields.io/github/issues/metastore-developers/metastore?color=blue)](https://github.com/metastore-developers/metastore/issues)
 [![Pull requests](https://img.shields.io/github/issues-pr/metastore-developers/metastore?color=blue)](https://github.com/metastore-developers/metastore/pulls)
@@ -15,6 +9,10 @@
 Metastore Python SDK.
 
 Feature store and data catalog for machine learning.
+
+<p align="center">
+    <img src="https://metastore.readthedocs.io/en/latest/_static/architecture.png" title="Metastore"/>
+</p>
 
 ## Prerequisites
 
@@ -201,7 +199,7 @@ from metastore import FeatureStore
 
 feature_store = FeatureStore(repository='/path/to/repository/')
 
-dataframe = feature_store.read_dataframe(
+dataframe = feature_store.read_from_source(
     'postgresql_data_source',
     table='customer_transaction',
     index_column='customer_id',
@@ -254,7 +252,7 @@ dataframe = feature_store.get_historical_features(
         'customer_transactions:daily_transactions',
         'customer_transactions:total_transactions'
     ]
-).compute()
+)
 
 metadata = dataframe.attrs['metastore']
 print(metadata)
@@ -281,7 +279,7 @@ dataframe = feature_store.get_online_features(
         'customer_transactions:daily_transactions',
         'customer_transactions:total_transactions'
     ]
-).compute()
+)
 
 metadata = dataframe.attrs['metastore']
 print(metadata)
