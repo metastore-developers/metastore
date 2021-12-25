@@ -11,7 +11,7 @@ Metastore Python SDK.
 Feature store and data catalog for machine learning.
 
 <p align="center">
-    <img src="https://metastore.readthedocs.io/en/latest/_static/architecture.png" title="Metastore"/>
+    <img src="https://metastore.readthedocs.io/en/latest/_static/images/architecture.png" title="Metastore"/>
 </p>
 
 ## Prerequisites
