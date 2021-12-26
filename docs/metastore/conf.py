@@ -2,10 +2,42 @@
 Sphinx configuration file.
 '''
 
-import os, sys
+import os
+import sys
+from typing import Any, Tuple, Dict
+
 sys.path.append(os.path.abspath('_pygments/'))
 
+from sphinx.application import Sphinx
+from sphinx.ext import apidoc
+
 import metastore
+
+
+def generate_documentation(*args: Tuple[Any], **kwargs: Dict[str, Any]):
+    '''
+    Generate API reference documentation.
+
+    Parameters:
+        *args (Tuple[Any]): Additional arguments.
+        **kwargs (Dict[str, Any]): Additional keyword arguments.
+    '''
+
+    module = os.path.abspath('../metastore/')
+    output = os.path.abspath('metastore/api-reference/')
+
+    apidoc.main(['-f', '-e', '-T', '-d', '2', '-o', output, module])
+
+
+def setup(app: Sphinx):
+    '''
+    Sphinx setup stage.
+
+    Parameters:
+        app (Sphinx): Sphinx application instance.
+    '''
+
+    app.connect('builder-inited', generate_documentation)
 
 
 project = metastore.__title__
