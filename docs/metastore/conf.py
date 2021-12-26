@@ -23,10 +23,12 @@ def generate_documentation(*args: Tuple[Any], **kwargs: Dict[str, Any]):
         **kwargs (Dict[str, Any]): Additional keyword arguments.
     '''
 
-    module = os.path.abspath('../metastore/')
-    output = os.path.abspath('metastore/api-reference/')
+    config_directory = os.path.abspath(os.path.dirname(__file__))
 
-    apidoc.main(['-f', '-e', '-T', '-d', '2', '-o', output, module])
+    module_path = os.path.join(config_directory, '..', '..', 'metastore/')
+    output_path = os.path.join(config_directory, 'api-reference/')
+
+    apidoc.main(['-f', '-e', '-T', '-d', '2', '-o', output_path, module_path])
 
 
 def setup(app: Sphinx):
