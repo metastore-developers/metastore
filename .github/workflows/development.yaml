@@ -1,4 +1,4 @@
-name: production
+name: development
 on:
     push:
         branches:
@@ -10,7 +10,7 @@ on:
 jobs:
     lint:
         runs-on: ubuntu-latest
-        environment: production
+        environment: development
         steps:
             - name: setup-python
               uses: actions/setup-python@v2
@@ -26,7 +26,7 @@ jobs:
               run: pylint setup.py metastore/ tests/
     test:
         runs-on: ubuntu-latest
-        environment: production
+        environment: development
         steps:
             - name: setup-python
               uses: actions/setup-python@v2
@@ -42,7 +42,7 @@ jobs:
               run: pytest --cov --cov-fail-under 80
     test-documentation:
         runs-on: ubuntu-latest
-        environment: production
+        environment: development
         steps:
             - name: setup-python
               uses: actions/setup-python@v2
@@ -54,22 +54,3 @@ jobs:
               run: pip install -e .[development]
             - name: test-generate-build
               run: cd docs && sphinx-build -b html metastore/ build/
-    build-publish:
-        runs-on: ubuntu-latest
-        environment: production
-        steps:
-            - name: setup-python
-              uses: actions/setup-python@v2
-              with:
-                python-version: 3.7
-            - name: checkout-main
-              uses: actions/checkout@v2
-            - name: install-package
-              run: pip install -e .[development]
-            - name: build-package
-              run: python setup.py bdist_wheel
-            - name: publish-package
-              env:
-                TWINE_USERNAME: ${{ secrets.REPOSITORY_USERNAME }}
-                TWINE_PASSWORD: ${{ secrets.REPOSITORY_PASSWORD }}
-              run: twine upload dist/*
