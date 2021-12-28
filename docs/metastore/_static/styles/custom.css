@@ -9,6 +9,11 @@
     --pst-color-headerlink: 0, 112, 186;
 }
 
+a.headerlink {
+    margin-left: 5px !important;
+    border-radius: 0.2rem !important;
+}
+
 code {
     padding: 2px 4px !important;
     background-color: #f5f7f9 !important;

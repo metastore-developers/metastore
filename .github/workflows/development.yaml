@@ -2,55 +2,55 @@ name: development
 on:
     push:
         branches:
-            - main
+          - main
     pull_request:
         branches:
-            - main
+          - main
     workflow_dispatch:
 jobs:
     lint:
         runs-on: ubuntu-latest
         environment: development
         steps:
-            - name: setup-python
-              uses: actions/setup-python@v2
-              with:
+          - name: setup-python
+            uses: actions/setup-python@v2
+            with:
                 python-version: 3.7
-            - name: checkout-main
-              uses: actions/checkout@v2
-            - name: install-package
-              run: pip install -e .[development]
-            - name: check-format
-              run: autopep8 --recursive --exit-code --diff setup.py metastore/ tests/
-            - name: check-lint
-              run: pylint setup.py metastore/ tests/
+          - name: checkout-main
+            uses: actions/checkout@v2
+          - name: install-package
+            run: pip install -e .[development]
+          - name: check-format
+            run: autopep8 --recursive --exit-code --diff setup.py metastore/ tests/
+          - name: check-lint
+            run: pylint setup.py metastore/ tests/
     test:
         runs-on: ubuntu-latest
         environment: development
         steps:
-            - name: setup-python
-              uses: actions/setup-python@v2
-              with:
+          - name: setup-python
+            uses: actions/setup-python@v2
+            with:
                 python-version: 3.7
-            - name: checkout-main
-              uses: actions/checkout@v2
-            - name: install-package
-              run: pip install -e .[development]
-            - name: test-package
-              run: pytest
-            - name: check-coverage
-              run: pytest --cov --cov-fail-under 80
+          - name: checkout-main
+            uses: actions/checkout@v2
+          - name: install-package
+            run: pip install -e .[development]
+          - name: test-package
+            run: pytest
+          - name: check-coverage
+            run: pytest --cov --cov-fail-under 80
     test-documentation:
         runs-on: ubuntu-latest
         environment: development
         steps:
-            - name: setup-python
-              uses: actions/setup-python@v2
-              with:
+          - name: setup-python
+            uses: actions/setup-python@v2
+            with:
                 python-version: 3.7
-            - name: checkout-main
-              uses: actions/checkout@v2
-            - name: install-package
-              run: pip install -e .[development]
-            - name: test-generate-build
-              run: cd docs && sphinx-build -b html metastore/ build/
+          - name: checkout-main
+            uses: actions/checkout@v2
+          - name: install-package
+            run: pip install -e .[development]
+          - name: test-generate-build
+            run: cd docs && sphinx-build -b html metastore/ build/
