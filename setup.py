@@ -80,7 +80,8 @@ setup(
             'sphinx>=4.3.0',
             'myst-parser>=0.15.0',
             'pydata-sphinx-theme>=0.7.0',
-            'twine>=3.7.0'
+            'twine>=3.7.0',
+            'bump2version>=1.0.0'
         ]
     },
     packages=find_packages(),

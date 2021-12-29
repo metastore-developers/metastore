@@ -1,0 +1,30 @@
+name: release
+on:
+    workflow_dispatch:
+        inputs:
+            release-type:
+                type: choice
+                required: true
+                default: patch
+                description: 'Choose a release type (version increment).'
+                options:
+                  - major
+                  - minor
+                  - patch
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+        environment: production
+        steps:
+          - name: setup-python
+            uses: actions/setup-python@v2
+            with:
+                python-version: 3.7
+          - name: checkout-main
+            uses: actions/checkout@v2
+          - name: install-package
+            run: pip install -e .[development]
+          - name: bump-version
+            run: bumpversion ${{ github.event.inputs.release-type }}
+          - name: push-tag
+            run: git push origin --tags

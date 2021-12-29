@@ -2,7 +2,7 @@ name: production
 on:
     push:
         tags:
-          - 'v*.*.*'
+          - '*'
     workflow_dispatch:
 jobs:
     build-publish:
@@ -19,8 +19,8 @@ jobs:
             run: pip install -e .[development]
           - name: build-package
             run: python setup.py bdist_wheel
-          - name: publish-package
-            env:
-                TWINE_USERNAME: ${{ secrets.REPOSITORY_USERNAME }}
-                TWINE_PASSWORD: ${{ secrets.REPOSITORY_PASSWORD }}
-                run: twine upload dist/*
+          #- name: publish-package
+          #  env:
+          #      TWINE_USERNAME: ${{ secrets.REPOSITORY_USERNAME }}
+          #      TWINE_PASSWORD: ${{ secrets.REPOSITORY_PASSWORD }}
+          #      run: twine upload dist/*
