@@ -6,7 +6,7 @@ on:
                 type: choice
                 required: true
                 default: patch
-                description: 'Choose a release type (version increment).'
+                description: 'Choose a release type'
                 options:
                   - major
                   - minor
@@ -20,8 +20,13 @@ jobs:
             uses: actions/setup-python@v2
             with:
                 python-version: 3.7
+                token: ${{ secrets.REPOSITORY_TOKEN }}
           - name: checkout-main
             uses: actions/checkout@v2
+          - name: setup-git
+            run: |
+                git config --local user.name "Metastore Developers"
+                git config --local user.email "metastoredevelopers@gmail.com"
           - name: install-package
             run: pip install -e .[development]
           - name: bump-version

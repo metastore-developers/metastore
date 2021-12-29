@@ -21,6 +21,6 @@ jobs:
             run: python setup.py bdist_wheel
           #- name: publish-package
           #  env:
-          #      TWINE_USERNAME: ${{ secrets.REPOSITORY_USERNAME }}
-          #      TWINE_PASSWORD: ${{ secrets.REPOSITORY_PASSWORD }}
+          #      TWINE_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+          #      TWINE_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
           #      run: twine upload dist/*
