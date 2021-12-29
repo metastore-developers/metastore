@@ -34,7 +34,7 @@ jobs:
                 if [ $(git tag) ]; then
                     bumpversion ${{ github.event.inputs.release-type }}
                 else
-                    bumpversion --current-version 0.0.0 major
+                    bumpversion --current-version 0.0.0 ${{ github.event.inputs.release-type }}
                 fi
           - name: push-tag
             run: git push origin --tags
