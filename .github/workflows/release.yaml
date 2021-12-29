@@ -30,6 +30,11 @@ jobs:
           - name: install-package
             run: pip install -e .[development]
           - name: bump-version
-            run: bumpversion ${{ github.event.inputs.release-type }}
+            run: |
+                if [ $(git tag) ]; then
+                    bumpversion ${{ github.event.inputs.release-type }}
+                else
+                    bumpversion --new-version 1.0.0
+                fi
           - name: push-tag
             run: git push origin --tags
