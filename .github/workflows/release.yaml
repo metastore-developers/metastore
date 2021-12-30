@@ -23,7 +23,6 @@ jobs:
           - name: checkout-main
             uses: actions/checkout@v2
             with:
-                fetch-depth: 0
                 token: ${{ secrets.REPOSITORY_TOKEN }}
           - name: setup-git
             run: |
@@ -33,6 +32,7 @@ jobs:
             run: pip install -e .[development]
           - name: bump-version
             run: |
+                git fetch --all --tags
                 echo $(git describe --dirty --tags --long --abbrev=40 --match=v*)
                 if [[ $(git tag) ]]; then
                     bumpversion ${{ github.event.inputs.release-type }}
