@@ -33,12 +33,10 @@ jobs:
             run: pip install -e .[development]
           - name: bump-version
             run: |
-                echo $(git tag)
+                echo $(git describe --dirty --tags --long --abbrev=40 --match=v*)
                 if [[ $(git tag) ]]; then
-                    echo "inc release"
                     bumpversion ${{ github.event.inputs.release-type }}
                 else
-                    echo "first release"
                     bumpversion --current-version 0.0.0 ${{ github.event.inputs.release-type }}
                 fi
           - name: push-tag
