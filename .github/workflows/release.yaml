@@ -32,7 +32,7 @@ jobs:
             run: pip install -e .[development]
           - name: bump-version
             run: |
-                if [ $(git tag) ]; then
+                if [[ $(git tag) ]]; then
                     bumpversion ${{ github.event.inputs.release-type }}
                 else
                     bumpversion --current-version 0.0.0 ${{ github.event.inputs.release-type }}
