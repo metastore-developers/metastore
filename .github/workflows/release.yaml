@@ -33,7 +33,7 @@ jobs:
           - name: bump-version
             run: |
                 git fetch --all --tags
-                echo $(git describe --dirty --tags --long --abbrev=40 --match=v*)
+
                 if [[ $(git tag) ]]; then
                     bumpversion ${{ github.event.inputs.release-type }}
                 else
