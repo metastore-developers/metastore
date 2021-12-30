@@ -33,8 +33,10 @@ jobs:
           - name: bump-version
             run: |
                 if [[ $(git tag) ]]; then
+                    echo "inc release"
                     bumpversion ${{ github.event.inputs.release-type }}
                 else
+                    echo "first release"
                     bumpversion --current-version 0.0.0 ${{ github.event.inputs.release-type }}
                 fi
           - name: push-tag
