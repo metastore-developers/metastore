@@ -23,6 +23,7 @@ jobs:
           - name: checkout-main
             uses: actions/checkout@v2
             with:
+                fetch-depth: 0
                 token: ${{ secrets.REPOSITORY_TOKEN }}
           - name: setup-git
             run: |
@@ -32,12 +33,7 @@ jobs:
             run: pip install -e .[development]
           - name: bump-version
             run: |
-                git fetch --all --tags
-
-                if [[ $(git tag) ]]; then
-                    bumpversion ${{ github.event.inputs.release-type }}
-                else
-                    bumpversion --current-version 0.0.0 ${{ github.event.inputs.release-type }}
-                fi
+                CURRENT_VERSION=$(git tag --sort -v:refname | head -n 1 | cut -c 2-)
+                bumpversion --current-version ${CURRENT_VERSION:-0.0.0} ${{ github.event.inputs.release-type }}
           - name: push-tag
             run: git push origin --tags
