@@ -23,6 +23,7 @@ jobs:
           - name: checkout-main
             uses: actions/checkout@v2
             with:
+                fetch-depth: 0
                 token: ${{ secrets.REPOSITORY_TOKEN }}
           - name: setup-git
             run: |
