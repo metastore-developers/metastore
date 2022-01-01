@@ -25,7 +25,7 @@ Feature store and data catalog for machine learning.
 Install package:
 
 ```console
-pip install metastore
+pip install metastore[all]
 ```
 
 ### Development
@@ -179,7 +179,12 @@ feature_group = FeatureGroup(
         Feature(name='timestamp', value_type=ValueType.STRING),
         Feature(name='daily_transactions', value_type=ValueType.FLOAT),
         Feature(name='total_transactions', value_type=ValueType.FLOAT)
-    ]
+    ],
+    enable_online_store=True,
+    tags={
+        'category': 'services',
+        'year': 2022
+    }
 )
 
 feature_store.apply(feature_group)

@@ -44,6 +44,41 @@ PACKAGE_NAME = 'metastore'
 
 package_info = get_package_info(PACKAGE_NAME)
 
+vault_requirements = [
+    'hvac>=0.11.0'
+]
+
+openmetadata_requirements = [
+    'openmetadata-ingestion>=0.5.0'
+]
+
+postgresql_requirements = [
+    'sqlalchemy>=1.4.20',
+    'psycopg2>=2.9.0'
+]
+
+teradata_requirements = [
+    'sqlalchemy>=1.4.20',
+    'teradatasqlalchemy>=17.0.0'
+]
+
+s3_requirements = [
+    's3fs>=2021.11.0'
+]
+
+redis_requirements = [
+    'redis>=4.1.0'
+]
+
+all_requirements = [
+    *vault_requirements,
+    *openmetadata_requirements,
+    *postgresql_requirements,
+    *teradata_requirements,
+    *s3_requirements,
+    *redis_requirements
+]
+
 setup(
     name=PACKAGE_NAME,
     version=package_info['__version__'],
@@ -67,10 +102,20 @@ setup(
     ],
     python_requires='>=3.7.0',
     install_requires=[
-        'dask>=2021.10.0'
+        'python-dotenv>=0.19.0',
+        'pydantic>=1.9.0',
+        'dask>=2021.11.0'
     ],
     extras_require={
+        'vault': vault_requirements,
+        'openmetadata': openmetadata_requirements,
+        'postgresql': postgresql_requirements,
+        'teradata': teradata_requirements,
+        's3': s3_requirements,
+        'redis': redis_requirements,
+        'all': all_requirements,
         'development': [
+            *all_requirements,
             'setuptools>=58.2.0',
             'wheel>=0.37.0',
             'autopep8>=1.6.0',
