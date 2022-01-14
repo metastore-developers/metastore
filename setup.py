@@ -48,8 +48,8 @@ vault_requirements = [
     'hvac>=0.11.0'
 ]
 
-openmetadata_requirements = [
-    'openmetadata-ingestion>=0.5.0'
+datahub_requirements = [
+    'acryl-datahub[datahub-rest]>=0.8.20'
 ]
 
 postgresql_requirements = [
@@ -72,7 +72,7 @@ redis_requirements = [
 
 all_requirements = [
     *vault_requirements,
-    *openmetadata_requirements,
+    *datahub_requirements,
     *postgresql_requirements,
     *teradata_requirements,
     *s3_requirements,
@@ -108,7 +108,7 @@ setup(
     ],
     extras_require={
         'vault': vault_requirements,
-        'openmetadata': openmetadata_requirements,
+        'datahub': datahub_requirements,
         'postgresql': postgresql_requirements,
         'teradata': teradata_requirements,
         's3': s3_requirements,

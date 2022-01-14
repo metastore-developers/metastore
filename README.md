@@ -255,8 +255,7 @@ dataframe = feature_store.get_historical_features(
     ]
 )
 
-metadata = dataframe.attrs['metastore']
-print(metadata)
+print(dataframe.head())
 ```
 
 ### Retrieve online features
@@ -282,8 +281,7 @@ dataframe = feature_store.get_online_features(
     ]
 )
 
-metadata = dataframe.attrs['metastore']
-print(metadata)
+print(dataframe.head())
 ```
 
 ## Documentation
