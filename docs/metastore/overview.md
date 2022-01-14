@@ -128,7 +128,7 @@ feature_group = FeatureGroup(
     enable_online_store=True,
     tags={
         'category': 'services',
-        'year': 2022
+        'year': '2022'
     }
 )
 
