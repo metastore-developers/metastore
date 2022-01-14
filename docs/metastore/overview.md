@@ -124,8 +124,9 @@ feature_group = FeatureGroup(
         Feature(name='timestamp', value_type=ValueType.STRING),
         Feature(name='daily_transactions', value_type=ValueType.FLOAT),
         Feature(name='total_transactions', value_type=ValueType.FLOAT)
-    ]
+    ],
     enable_online_store=True,
+    expires_in=timedelta(days=1),
     tags={
         'category': 'services',
         'year': '2022'
@@ -160,7 +161,7 @@ feature_store.ingest('customer_transactions', dataframe)
 ```python
 # materialize_features.py
 
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from metastore import FeatureStore
 
@@ -169,8 +170,7 @@ feature_store = FeatureStore(repository='/path/to/repository/')
 
 feature_store.materialize(
     'customer_transactions',
-    end_date=datetime.utcnow(),
-    expires_in=timedelta(days=1)
+    end_date=datetime.utcnow()
 )
 ```
 
