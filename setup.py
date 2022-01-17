@@ -104,7 +104,7 @@ setup(
     install_requires=[
         'python-dotenv>=0.19.0',
         'pydantic>=1.9.0',
-        'dask>=2021.11.0'
+        'modin[all]>=0.12.0'
     ],
     extras_require={
         'vault': vault_requirements,

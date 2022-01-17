@@ -236,7 +236,7 @@ feature_store.materialize(
 
 from datetime import datetime
 
-import pandas as pd
+import modin.pandas as pd
 from metastore import FeatureStore
 
 
@@ -263,7 +263,7 @@ print(dataframe.head())
 ```python
 # retrieve_online_features.py
 
-import pandas as pd
+import modin.pandas as pd
 from metastore import FeatureStore
 
 
