@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* [Python (>=3.7.0)](https://www.python.org)
+* [Python (>=3.8.0)](https://www.python.org)
 
 ## Development
 

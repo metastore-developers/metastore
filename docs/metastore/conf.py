@@ -95,4 +95,4 @@ html_theme_options = {
     ]
 }
 
-pygments_style = 'style.MetastoreStyle'
+pygments_style = 'metastore_style.MetastoreStyle'

@@ -8,18 +8,18 @@ from distutils.util import convert_path
 from setuptools import setup, find_packages
 
 
-def get_package_info(path: str) -> Dict[str, str]:
+def get_package_info(name: str) -> Dict[str, str]:
     '''
     Get package description information.
 
     Parameters:
-        path (str): Path to directory defining package main module.
+        name (str): Main package name.
     Returns:
         Dict[str, str]: A dictionary containing package information.
     '''
 
     with open(
-        convert_path(os.path.join(path, 'package.py')),
+        convert_path(os.path.join(name, 'package.py')),
         encoding='utf-8'
     ) as file:
         package_dict = {}
@@ -44,6 +44,10 @@ PACKAGE_NAME = 'metastore'
 
 package_info = get_package_info(PACKAGE_NAME)
 
+dotenv_requirements = [
+    'python-dotenv>=0.19.0'
+]
+
 vault_requirements = [
     'hvac>=0.11.0'
 ]
@@ -52,9 +56,17 @@ datahub_requirements = [
     'acryl-datahub[datahub-rest]>=0.8.20'
 ]
 
+mysql_requirements = [
+    'pymysql>=1.0.0'
+]
+
 postgresql_requirements = [
     'sqlalchemy>=1.4.20',
     'psycopg2>=2.9.0'
+]
+
+sqlserver_requirements = [
+    'pymssql>=2.2.0'
 ]
 
 teradata_requirements = [
@@ -71,9 +83,12 @@ redis_requirements = [
 ]
 
 all_requirements = [
+    *dotenv_requirements,
     *vault_requirements,
     *datahub_requirements,
+    *mysql_requirements,
     *postgresql_requirements,
+    *sqlserver_requirements,
     *teradata_requirements,
     *s3_requirements,
     *redis_requirements
@@ -97,19 +112,21 @@ setup(
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'License :: OSI Approved :: BSD License'
     ],
-    python_requires='>=3.7.0',
+    python_requires='>=3.8.0',
     install_requires=[
-        'python-dotenv>=0.19.0',
         'pydantic>=1.9.0',
         'modin[all]>=0.12.0'
     ],
     extras_require={
+        'dotenv': dotenv_requirements,
         'vault': vault_requirements,
         'datahub': datahub_requirements,
+        'mysql': mysql_requirements,
         'postgresql': postgresql_requirements,
+        'sqlserver': sqlserver_requirements,
         'teradata': teradata_requirements,
         's3': s3_requirements,
         'redis': redis_requirements,

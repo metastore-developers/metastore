@@ -10,7 +10,7 @@ Feature store and data catalog for machine learning.
 
 ## Prerequisites
 
-* [Python (>=3.7.0)](https://www.python.org)
+* [Python (>=3.8.0)](https://www.python.org)
 
 ## Installation
 
@@ -27,17 +27,16 @@ pip install metastore[all]
 ```yaml
 # metastore.yaml
 
-project:
-    name: 'customer_transactions'
-    display_name: 'Customer transactions'
-    description: 'Customer transactions feature store.'
-    author: 'Metastore Developers'
-    tags:
-      - 'customer'
-      - 'transaction'
-    version: '1.0.0'
+name: 'customer_transactions'
+display_name: 'Customer transactions'
+description: 'Customer transactions feature store.'
+author: 'Metastore Developers'
+tags:
+  - 'customer'
+  - 'transaction'
+version: '1.0.0'
 credential_store:
-    type: 'local'
+    type: 'file'
     path: '/path/to/.env'
 metadata_store:
     type: 'file'
@@ -51,33 +50,32 @@ metadata_store:
     s3_secret_key:
         type: 'secret'
         name: 'S3_SECRET_KEY'
-feature_store:
-    offline_store:
-        type: 'file'
-        path: 's3://path/to/features/'
-        s3_endpoint:
-            type: 'secret'
-            name: 'S3_ENDPOINT'
-        s3_access_key:
-            type: 'secret'
-            name: 'S3_ACCESS_KEY'
-        s3_secret_key:
-            type: 'secret'
-            name: 'S3_SECRET_KEY'
-    online_store:
-        type: 'redis'
-        hostname:
-            type: 'secret'
-            name: 'REDIS_HOSTNAME'
-        port:
-            type: 'secret'
-            name: 'REDIS_PORT'
-        database:
-            type: 'secret'
-            name: 'REDIS_DATABASE'
-        password:
-            type: 'secret'
-            name: 'REDIS_PASSWORD'
+offline_store:
+    type: 'file'
+    path: 's3://path/to/features/'
+    s3_endpoint:
+        type: 'secret'
+        name: 'S3_ENDPOINT'
+    s3_access_key:
+        type: 'secret'
+        name: 'S3_ACCESS_KEY'
+    s3_secret_key:
+        type: 'secret'
+        name: 'S3_SECRET_KEY'
+online_store:
+    type: 'redis'
+    hostname:
+        type: 'secret'
+        name: 'REDIS_HOSTNAME'
+    port:
+        type: 'secret'
+        name: 'REDIS_PORT'
+    database:
+        type: 'secret'
+        name: 'REDIS_DATABASE'
+    password:
+        type: 'secret'
+        name: 'REDIS_PASSWORD'
 data_sources:
   - name: 'postgresql_data_source'
     type: 'postgresql'

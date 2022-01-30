@@ -7,12 +7,16 @@
 - Distributed processing
 - ETL pipelines
 - Data lineage
-- Local credential store
-- Vault credential store
-- File metadata store (local and S3)
+- Local file system
+- S3 file system
+- File credential store
+- HashiCorp Vault credential store
+- File metadata store
 - DataHub metadata store
-- File data source (local and S3)
+- File data source
+- Microsoft SQL Server data source
+- MySQL data source
 - PostgreSQL data source
 - Teradata data source
-- File offline store (local and S3)
+- File offline store
 - Redis online store

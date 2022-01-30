@@ -1,5 +1,5 @@
 '''
-Pygments styles.
+Metastore syntax highlighting style.
 '''
 
 from pygments.style import Style
@@ -20,8 +20,10 @@ class MetastoreStyle(Style):
     Metastore syntax highlighting style.
     '''
 
+    #: Base style.
     default_style = ''
 
+    #: Style properties.
     styles = {
         Comment: '#666f78',
         Comment.Preproc: '#666f78',
@@ -43,3 +45,8 @@ class MetastoreStyle(Style):
         Number: '#009b44',
         Error: '#000000'
     }
+
+
+__all__ = [
+    'MetastoreStyle'
+]
